@@ -1,0 +1,111 @@
+/* Reset e básicos */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f4;
+  color: #2e2e2e;
+}
+
+header {
+  background: #27632a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: #4a774a;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover,
+nav button.active {
+  background-color: #27632a;
+  outline: none;
+}
+
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-height: 400px;
+  outline: none;
+}
+
+.imagem-campo {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(39, 99, 42, 0.3);
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #27632a;
+  padding-bottom: 20px;
+}
+
+.redes-sociais {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes-sociais a {
+  display: inline-block;
+  background: #4a774a;
+  color: white;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.redes-sociais a.instagram {
+  background: #e1306c;
+}
+
+.redes-sociais a.facebook {
+  background: #3b5998;
+}
+
+.redes-sociais a:hover,
+.redes-sociais a:focus {
+  opacity: 0.8;
+  outline: none;
+}
+
+.info-box {
+  background:#e7f1de;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-style: italic;
+}
