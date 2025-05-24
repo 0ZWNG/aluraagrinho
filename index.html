@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Conexão Campo e Cidade - valorizando o trabalho rural e a integração digital" />
+  <title>Conexão Campo e Cidade - SPA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const content = document.getElementById('content');
+      const buttons = document.querySelectorAll('nav button');
+
+      const sections = {
+        home: `
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+            alt="Campo com plantações e céu azul"
+            class="imagem-campo"
+          />
+          <h2>Bem-vindo ao site Conexão Campo e Cidade</h2>
+          <p>Conheça mais sobre a valorização do trabalho rural e as soluções para integrar campo e cidade com tecnologia.</p>
+        `,
+        problemas: `
+          <h2>🌾 Problemas Enfrentados no Campo e na Cidade</h2>
+          <ul>
+            <li><strong>Desvalorização do Trabalho Rural:</strong> O trabalho rural é essencial, mas muitas vezes desvalorizado, gerando falta de reconhecimento e dificuldades para os trabalhadores.</li>
+            <li><strong>Falta de Acesso à Tecnologia no Campo:</strong> Muitos produtores rurais enfrentam limitações para acessar tecnologias e internet de qualidade, aumentando a desigualdade digital.</li>
+            <li><strong>Desperdício de Alimentos:</strong> Falta de infraestrutura para armazenamento e transporte causa perdas na colheita e agrava a insegurança alimentar.</li>
+            <li><strong>Fuga de Jovens do Campo:</strong> A migração para cidades enfraquece o campo, prejudicando a preservação cultural e o desenvolvimento sustentável.</li>
+          </ul>
+        `,
+        solucoes: `
+          <h2>💡 Soluções Criativas para a Conexão Campo-Cidade</h2>
+          <ul>
+            <li><strong>Apadrinhar um Produtor:</strong> Plataforma para aproximar consumidores urbanos e agricultores, valorizando o trabalho rural.</li>
+            <li><strong>Conexão Jovens Urbanos e Rurais:</strong> Troca de conhecimento tecnológico entre jovens das cidades e agricultores.</li>
+            <li><strong>Sistema de Aviso de Colheita:</strong> Anúncio digital para venda direta de excedentes agrícolas, reduzindo desperdício.</li>
+            <li><strong>Empreendedorismo Jovem no Campo:</strong> Incentivo a negócios sustentáveis e inovadores para reter jovens no meio rural.</li>
+          </ul>
+        `,
+        futuro: `
+          <h2>🌍 O Futuro da Conexão entre Campo e Cidade</h2>
+          <p>O futuro sustentável depende da valorização do campo, inclusão digital e empreendedorismo, formando uma rede colaborativa entre campo e cidade.</p>
+          <div class="info-box">
+            <p>Confira mais no site da <a href="https://www.embrapa.br/" target="_blank" rel="noopener noreferrer">Embrapa</a>, referência em inovação rural.</p>
+          </div>
+        `
+      };
+
+      function setActive(button) {
+        buttons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+      }
+
+      function loadContent(section) {
+        content.innerHTML = sections[section];
+        content.focus();
+      }
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.id.replace('btn-', '');
+          setActive(button);
+          loadContent(id);
+        });
+      });
+
+      loadContent('home');
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Conexão Campo e Cidade</h1>
+    <p>Promovendo a valorização do trabalho rural e a integração digital</p>
+  </header>
+
+  <nav aria-label="Menu principal">
+    <button id="btn-home" class="active" aria-controls="content" aria-selected="true">Home</button>
+    <button id="btn-problemas" aria-controls="content" aria-selected="false">Problemas</button>
+    <button id="btn-solucoes" aria-controls="content" aria-selected="false">Soluções</button>
+    <button id="btn-futuro" aria-controls="content" aria-selected="false">Futuro</button>
+  </nav>
+
+  <main id="content" tabindex="0" aria-live="polite"></main>
+
+  <footer>
+    <div class="redes-sociais" aria-label="Redes sociais">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+    <p>&copy; 2025 Conexão Campo e Cidade</p>
+  </footer>
+</body>
+</html>
